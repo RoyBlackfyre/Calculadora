@@ -75,6 +75,10 @@ document.body.addEventListener("click",(event)=>{
         display2.innerText = operand1 + " " + operator + " " + operand2 + " = "
         let result = mathFunction(operand1,operator,operand2)
         display1.innerText = result
+        operand1 = result
+        operand2 = ""
+        fase1 = true
+        fase2 = false
     }
 
     
