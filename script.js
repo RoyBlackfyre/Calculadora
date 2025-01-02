@@ -13,6 +13,7 @@ let fase2 = false // Inputing the second operand and calling the math function
 
 
 document.body.addEventListener("click",(event)=>{
+    event.target.blur()
     //Stage changue
 
     if(event.target.classList.value === "button text clear"){
