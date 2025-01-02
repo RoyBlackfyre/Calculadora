@@ -23,11 +23,13 @@ body{
 
 .Display.first {
     font-size: 140%;
+    height: 4%;
 
 }
 
 .Display.second {
     background-color: gray;
+    height: 4%;
 }
 
 #Teclado {
@@ -36,18 +38,27 @@ body{
     display:flex;
     flex-direction: column;
     padding:5%;
-    gap:1%
+    gap:1%;
+    height:92%;
 }
 
 .button-row{
     display: flex;
-    flex:1 0 auto;
+    flex:1 0 0;
+    gap: 1%
 }
 
 button {
     flex:1 1 auto;
-    aspect-ratio: 1/1;
     width: 25%;
     font-size: 200%;
 }
+
+.button.text{
+    flex:1 1 auto;
+    aspect-ratio: 2/1;
+    font-size: 200%;
+}
+
+
 

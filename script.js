@@ -22,6 +22,7 @@ document.body.addEventListener("click",(event)=>{
         }else{
             operand1 += event.target.innerText
             display1.innerText = operand1
+            console.log(parseFloat(operand1) + 2.3)
         }
         
     }
