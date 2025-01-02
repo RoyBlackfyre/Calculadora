@@ -21,12 +21,12 @@ body{
     padding:1% 3% 1% 3%;
 }
 
-.Display.fase1 {
+.Display.first {
     font-size: 140%;
 
 }
 
-.Display.fase2 {
+.Display.second {
     background-color: gray;
 }
 
