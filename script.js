@@ -48,13 +48,7 @@ document.body.addEventListener("click",(event)=>{
             operand1 = operand1.slice(0,-1)
             display1.innerText = operand1
     }
-
-    if((event.target.classList.value === "button text clear") && fase1){
-        operand1 = ""
-        display1.innerText = operand1
-
     
-    }
     //Fase 2 
     if(event.target.classList.value === "button number" && fase2){
         operand2 += event.target.innerText
