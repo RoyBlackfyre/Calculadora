@@ -71,8 +71,38 @@ document.body.addEventListener("click",(event)=>{
         display2.innerText = operand1 + " " + operator
     }
 
+    if(event.target.classList.value === "button equal" && fase2 && operand2!==""){
+        display2.innerText = operand1 + " " + operator + " " + operand2 + " = "
+        let result = mathFunction(operand1,operator,operand2)
+        display1.innerText = result
+    }
+
+    
+
 })
 
+function mathFunction(operand1,operator,operand2){
+    operand1=parseFloat(operand1)
+    operand2=parseFloat(operand2)
+
+    let result;
+    switch (operator){
+        case "+":
+            result = add(operand1,operand2)
+            return result
+        case "-":
+            result = substract(operand1,operand2)
+            return result
+        case "%":
+            console.log("multiplying...")
+            result = divide(operand1,operand2)
+            return result
+        case "x":
+            console.log("multiplying...")
+            result = multiply(operand1,operand2)
+            return result
+    }
+}
 function add(a,b){
     return a + b
 }
