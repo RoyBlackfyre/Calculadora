@@ -13,7 +13,6 @@ let fase2 = false // Inputing the second operand and calling the math function
 
 
 document.body.addEventListener("click",(event)=>{
-
     //Stage changue
 
     if(event.target.classList.value === "button text clear"){
@@ -92,9 +91,82 @@ document.body.addEventListener("click",(event)=>{
         fase1 = true
         fase2 = false
     }
+})
 
+document.body.addEventListener("keydown",(event)=>{
+    event.preventDefault()
+    if(event.key === "Delete"){
+        
+        fase1=true
+        fase2=false
+        operand1=""
+        operand2=""
+        operator=""
+        display1.innerText=""
+        display2.innerText=""
+    }
+ 
+    if((event.key == "+" || event.key == "-" || event.key == "%" || event.key == "/" || event.key == "x" || event.key == "*") && fase1 && operand1!="" ){
+       
+        fase1=false
+        fase2=true
+    }
+
+    //Fase 1
     
+    if(("123456789").includes(event.key) && fase1){
+        operand1 += event.key
+        display1.innerText = operand1
+    }
 
+    if(event.key =="." && fase1){
+        if(!operand1.includes(".")){
+            operand1 += event.key
+            display1.innerText = operand1
+            
+        }
+    }
+
+    if((event.key === "Backspace") && fase1){
+            operand1 = operand1.slice(0,-1)
+            display1.innerText = operand1
+    }
+    
+    //Fase 2 
+    if("123456789".includes(event.key) && fase2){
+        operand2 += event.key
+        display1.innerText = operand2
+    }
+
+    if((event.key === ".") && fase2){
+        if(!operand2.includes(".")){
+            operand2 += event.key
+            display1.innerText = operand2   
+        }
+    }
+
+    if((event.key === "Backspace") && fase2){
+            operand2 = operand2.slice(0,-1)
+            display1.innerText = operand2
+    }
+    if("+-%*x/".includes(event.key) && fase2 && operand2===""){
+        operator = event.key
+        display1.innerText = ""
+        display2.innerText = operand1 + " " + operator
+    }
+
+    if(event.key === "=" && fase2 && operand2!==""){
+        display2.innerText = operand1 + " " + operator + " " + operand2 + " = "
+        let result = mathFunction(operand1,operator,operand2)
+        display1.innerText = result
+        
+        operand1 = result
+        operand2 = ""
+
+        //Changue of state
+        fase1 = true
+        fase2 = false
+    }
 })
 
 function mathFunction(operand1,operator,operand2){
@@ -109,10 +181,10 @@ function mathFunction(operand1,operator,operand2){
         case "-":
             result = substract(operand1,operand2)
             return result
-        case "%":
+        case ("%" || "/"):
             result = divide(operand1,operand2)
             return result
-        case "x":
+        case ("x" || "*"):
             result = multiply(operand1,operand2)
             return result
     }
