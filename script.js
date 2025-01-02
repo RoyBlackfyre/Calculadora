@@ -8,14 +8,23 @@ let operand2=""
 let operator=""
 
 //Used to determine the proceding stage
-let fase1 = true // Inputing the first operand
-let fase2 = false // Inputing the operator or modifyng operator
-let fase3 = false // Inputing the second operand
+let fase1 = true // Inputing the first operand and inputing or modifying the operator
+let fase2 = false // Inputing the second operand and calling the math function
 
 
 document.body.addEventListener("click",(event)=>{
 
     //Stage changue
+
+    if(event.target.classList.value === "button text clear"){
+        fase1=true
+        fase2=false
+        operand1=""
+        operand2=""
+        operator=""
+        display1.innerText=""
+        display2.innerText=""
+    }
 
     if(event.target.classList.value === "button operator" && fase1 && operand1!=""){
         fase1=false
@@ -75,8 +84,11 @@ document.body.addEventListener("click",(event)=>{
         display2.innerText = operand1 + " " + operator + " " + operand2 + " = "
         let result = mathFunction(operand1,operator,operand2)
         display1.innerText = result
+        
         operand1 = result
         operand2 = ""
+
+        //Changue of state
         fase1 = true
         fase2 = false
     }
@@ -98,11 +110,9 @@ function mathFunction(operand1,operator,operand2){
             result = substract(operand1,operand2)
             return result
         case "%":
-            console.log("multiplying...")
             result = divide(operand1,operand2)
             return result
         case "x":
-            console.log("multiplying...")
             result = multiply(operand1,operand2)
             return result
     }
