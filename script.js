@@ -16,7 +16,8 @@ let fase3 = false // Inputing the second operand
 document.body.addEventListener("click",(event)=>{
 
     if(event.target.classList.value === "button number" && fase1){
-        operador1 += event.target.innerText
+        operand1 += event.target.innerText
+        display1.innerText = operand1
     }
 })
 
