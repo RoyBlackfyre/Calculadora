@@ -109,7 +109,7 @@ document.body.addEventListener("keydown",(event)=>{
 
     //Fase 1
     
-    if(("123456789").includes(event.key) && fase1){
+    if(("0123456789").includes(event.key) && fase1){
         operand1 += event.key
         display1.innerText = operand1
     }
@@ -128,7 +128,7 @@ document.body.addEventListener("keydown",(event)=>{
     }
     
     //Fase 2 
-    if("123456789".includes(event.key) && fase2){
+    if("0123456789".includes(event.key) && fase2){
         operand2 += event.key
         display1.innerText = operand2
     }
