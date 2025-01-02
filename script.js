@@ -15,17 +15,20 @@ let fase3 = false // Inputing the second operand
 
 document.body.addEventListener("click",(event)=>{
 
-    if((event.target.classList.value === "button number" || event.target.classList.value === "button dot") && fase1){
+    //Fase 1
+    if(event.target.classList.value === "button number" && fase1){
+        operand1 += event.target.innerText
+        display1.innerText = operand1
+    }
 
-        if(event.target.innerText==="." && operand1.includes(".")){
-            
-        }else{
+    if((event.target.classList.value === "button dot") && fase1){
+        if(!operand1.includes(".")){
             operand1 += event.target.innerText
             display1.innerText = operand1
-            console.log(parseFloat(operand1) + 2.3)
         }
-        
     }
+
+
 })
 
 function add(a,b){
