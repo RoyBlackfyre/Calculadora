@@ -15,6 +15,13 @@ let fase3 = false // Inputing the second operand
 
 document.body.addEventListener("click",(event)=>{
 
+    //Stage changue
+
+    if(event.target.classList.value === "button operator" && fase1 && operand1!=""){
+        fase1=false
+        fase2=true
+    }
+
     //Fase 1
     if(event.target.classList.value === "button number" && fase1){
         operand1 += event.target.innerText
@@ -25,6 +32,7 @@ document.body.addEventListener("click",(event)=>{
         if(!operand1.includes(".")){
             operand1 += event.target.innerText
             display1.innerText = operand1
+            
         }
     }
 
@@ -36,8 +44,15 @@ document.body.addEventListener("click",(event)=>{
     if((event.target.classList.value === "button text clear") && fase1){
         operand1 = ""
         display1.innerText = operand1
-}
 
+    
+    }
+    //Fase 2 
+    if(event.target.classList.value === "button operator" && fase2){
+        operator = event.target.innerText
+        display1.innerText = ""
+        display2.innerText = operand1 + " " + operator
+    }
 
 })
 
