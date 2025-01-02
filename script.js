@@ -33,6 +33,11 @@ document.body.addEventListener("click",(event)=>{
             display1.innerText = operand1
     }
 
+    if((event.target.classList.value === "button text clear") && fase1){
+        operand1 = ""
+        display1.innerText = operand1
+}
+
 
 })
 
