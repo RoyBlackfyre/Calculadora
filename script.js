@@ -84,7 +84,7 @@ document.body.addEventListener("click",(event)=>{
         let result = mathFunction(operand1,operator,operand2)
         display1.innerText = result
         
-        operand1 = result
+        operand1 = result.toString()
         operand2 = ""
 
         //Changue of state
@@ -160,7 +160,8 @@ document.body.addEventListener("keydown",(event)=>{
         let result = mathFunction(operand1,operator,operand2)
         display1.innerText = result
         
-        operand1 = result
+
+        operand1 = result.toString()
         operand2 = ""
 
         //Changue of state
