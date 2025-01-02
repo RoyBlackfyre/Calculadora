@@ -28,6 +28,11 @@ document.body.addEventListener("click",(event)=>{
         }
     }
 
+    if((event.target.classList.value === "button text delete") && fase1){
+            operand1 = operand1.slice(0,-1)
+            display1.innerText = operand1
+    }
+
 
 })
 
