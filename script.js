@@ -48,7 +48,24 @@ document.body.addEventListener("click",(event)=>{
     
     }
     //Fase 2 
-    if(event.target.classList.value === "button operator" && fase2){
+    if(event.target.classList.value === "button number" && fase2){
+        operand2 += event.target.innerText
+        display1.innerText = operand2
+    }
+
+    if((event.target.classList.value === "button dot") && fase2){
+        if(!operand2.includes(".")){
+            operand2 += event.target.innerText
+            display1.innerText = operand2   
+        }
+    }
+
+    if((event.target.classList.value === "button text delete") && fase2){
+            operand2 = operand2.slice(0,-1)
+            display1.innerText = operand2
+    }
+
+    if(event.target.classList.value === "button operator" && fase2 && operand2===""){
         operator = event.target.innerText
         display1.innerText = ""
         display2.innerText = operand1 + " " + operator
