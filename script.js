@@ -79,6 +79,8 @@ document.body.addEventListener("click",(event)=>{
         let result = mathFunction(operand1,operator,operand2)
         display1.innerText = result
         
+        console.log(result)
+        console.log(typeof(result))
         operand1 = result.toString()
         operand2 = ""
 
@@ -155,7 +157,8 @@ document.body.addEventListener("keydown",(event)=>{
         let result = mathFunction(operand1,operator,operand2)
         display1.innerText = result
         
-
+        console.log(result)
+        console.log(typeof(result))
         operand1 = result.toString()
         operand2 = ""
 
@@ -177,12 +180,18 @@ function mathFunction(operand1,operator,operand2){
         case "-":
             result = substract(operand1,operand2)
             return result
-        case ("%" || "/"):
+        case "/":
             result = divide(operand1,operand2)
             return result
-        case ("x" || "*"):
+        case "%":
+            result = divide(operand1,operand2)
+            return result
+        case "*":
             result = multiply(operand1,operand2)
             return result
+        case "x":
+            result = multiply(operand1,operand2)
+            return result 
     }
 }
 function add(a,b){

@@ -1,19 +1,26 @@
 
 body{
-    padding-top:10vh;
+    margin:0;
+    padding-top:5vh;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(245 204 127);
 }
 
 #Calculadora {
     aspect-ratio: 3/4;
     border: 4px solid black;
+    border-radius: 8px;
     height:80vh;
-    margin: 0 auto;
+    max-height: 80vh;
+    margin: 4vh auto;
     display :flex;
     flex-direction: column;
+
 }
 
 .Display {
-    background-color: lightgrey;
+    
     flex-grow: 2;
     justify-content: right;
     align-items: end;
@@ -23,12 +30,14 @@ body{
 
 .Display.first {
     font-size: 140%;
-    height: 4%;
+    height: 6%;
+    background-color: lightskyblue;
+    border-radius: 4px;
 
 }
 
 .Display.second {
-    background-color: gray;
+    background-color: #aae7e4;;
     height: 4%;
 }
 
@@ -60,5 +69,11 @@ button {
     font-size: 200%;
 }
 
-
+footer{
+    padding: 2.5vh;
+    height:10vh;
+    max-height: 10vh;
+    background-color: lightsalmon;
+    text-align: center;
+}
 
